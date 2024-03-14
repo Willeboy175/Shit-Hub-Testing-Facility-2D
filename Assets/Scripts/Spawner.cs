@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public float cooldown = 4f;
+    public float cooldownMax = 2f;
+    public float cooldownMin = 4f;
     public GameObject Object;
 
     private Transform pos;
-    private float timer;
+    private float timer, cooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class Spawner : MonoBehaviour
         if (timer > cooldown)
         {
             Instantiate(Object, pos);
-            cooldown = Random.Range(3, 5);
+            cooldown = Random.Range(cooldownMin, cooldownMax);
             timer = 0;
         }
     }

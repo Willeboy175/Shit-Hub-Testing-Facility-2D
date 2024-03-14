@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 2f;
+    public float health = 5f;
 
     public GameObject gameOverMenu;
 
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            health += -1f;
+            health -= 1f;
         }
 
         if (health <= 0)

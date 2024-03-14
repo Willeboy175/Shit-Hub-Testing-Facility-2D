@@ -24,8 +24,8 @@ public class EnemyMovement : MonoBehaviour
         transform.position += speed * Time.deltaTime * dir;
     }
 
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

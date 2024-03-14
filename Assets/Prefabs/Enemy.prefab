@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7312787238600923687}
   - component: {fileID: 7312787238600923686}
   - component: {fileID: 7312787238600923685}
-  - component: {fileID: 7312787238600923688}
+  - component: {fileID: 3462287945540764289}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   lifeTime: 3
---- !u!60 &7312787238600923688
+--- !u!60 &3462287945540764289
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
