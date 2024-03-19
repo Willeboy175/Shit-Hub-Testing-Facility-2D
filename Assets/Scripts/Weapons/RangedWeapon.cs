@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ranged : Weapons
+public class RangedWeapon : Weapons
 {
     public int ammo;
     public float reloadSpeed;
 
-    private int currentAmmo;
-    private float reloadTimer;
+    protected int currentAmmo;
+    protected float reloadTimer;
 
     // Update is called once per frame
     void Update()
     {
+        fireTimer += Time.deltaTime;
+
         if (currentAmmo <= 0 || Input.GetKeyDown(KeyCode.R))
         {
             reloadTimer += Time.deltaTime;
