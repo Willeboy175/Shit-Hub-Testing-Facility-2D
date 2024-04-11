@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class Weapons : MonoBehaviour
 {
-    public float fireRate; //Shots per minute
-    protected float fireTimer;
+    public float attackSpeed; //Shots per minute
+    public string weaponName;
 
-    void Update()
+    float currentTime;
+    protected Vector2 dir;
+
+    public virtual void Update()
     {
-        fireTimer += Time.deltaTime;
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        mousePos = Camera.main.ScreenToViewportPoint(mousePos);
+
+        dir = (mousePos - transform.position).normalized;
+
+        currentTime += Time.deltaTime;
     }
 
-    public virtual void Use()
+    public virtual bool Use()
     {
-        if (fireTimer <= 60 / fireRate)
+        if (currentTime <= 60 / attackSpeed)
         {
-            return;
+            return false;
         }
+        currentTime = 0;
         print("Bang");
-        fireTimer = 0;
+        return true;
     }
 }

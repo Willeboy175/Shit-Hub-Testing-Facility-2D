@@ -1344,6 +1344,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4319060796889327684, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4319060796889327686, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1361,6 +1365,14 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4562184089112464902, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1800104675585788973, guid: 01cc1744f8b48d84c970407e97d91a6f, type: 3}
+    - target: {fileID: 4562184089112464902, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
+      propertyPath: attackSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562184089112464902, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
       propertyPath: reloadSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -1373,11 +1385,19 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5093473274297683750, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
+      propertyPath: attackSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093473274297683750, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
       propertyPath: reloadSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8508007212115822134, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
       propertyPath: fireRate
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508007212115822134, guid: 310f34ae6ec61e546a890ece6d8f7d6e, type: 3}
+      propertyPath: attackSpeed
       value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -7,13 +7,13 @@ public class RangedWeapon : Weapons
     public int ammo;
     public float reloadSpeed;
 
-    protected int currentAmmo;
-    protected float reloadTimer;
+    int currentAmmo;
+    float reloadTimer;
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        fireTimer += Time.deltaTime;
+        base.Update();
 
         if (currentAmmo <= 0 || Input.GetKeyDown(KeyCode.R))
         {
@@ -26,15 +26,15 @@ public class RangedWeapon : Weapons
         }
     }
 
-    public override void Use()
+    public override bool Use()
     {
-        base.Use();
-        if (currentAmmo <= 0)
+        if (currentAmmo <= 0 || base.Use() == false)
         {
             print("No ammo");
-            return;
+            return false;
         }
         currentAmmo--;
         print("Shoot! ammo remaining: " + currentAmmo);
+        return true;
     }
 }

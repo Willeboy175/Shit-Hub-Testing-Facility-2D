@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ProjectileWeapon : RangedWeapon
 {
-    public float speed;
-    public float lifeTime;
-    public Vector2 dir;
-    public GameObject prefabProjectile;
+    public GameObject projectile;
+    protected GameObject newestProjectile;
 
     // Start is called before the first frame update
     void Start()
@@ -16,20 +14,19 @@ public class ProjectileWeapon : RangedWeapon
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        fireTimer += Time.deltaTime;
+        base.Update();
     }
 
-    public override void Use()
+    public override bool Use()
     {
-        base.Use();
-
-        GameObject projectile = Instantiate(prefabProjectile, transform);
-        PlayerProjectile playerProjectile = projectile.GetComponent<PlayerProjectile>();
-
-        playerProjectile.speed = speed;
-        playerProjectile.lifeTime = lifeTime;
-        playerProjectile.dir = dir;
+        if (base.Use() == false)
+        {
+            return false;
+        }
+        newestProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        newestProjectile.transform.up = dir;
+        return true;
     }
 }
