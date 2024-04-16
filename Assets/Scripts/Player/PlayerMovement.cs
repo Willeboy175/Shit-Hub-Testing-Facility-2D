@@ -25,14 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         grounded = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        grounded = false;
     }
 
     void FixedUpdate()
@@ -67,5 +62,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(horz * airSpeed, rb.velocity.y);
             }
         }
+
+        grounded = false;
     }
 }

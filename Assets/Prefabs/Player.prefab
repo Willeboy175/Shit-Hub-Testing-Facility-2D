@@ -16,10 +16,11 @@ GameObject:
   - component: {fileID: 8508007212115822134}
   - component: {fileID: 5093473274297683750}
   - component: {fileID: 4562184089112464902}
+  - component: {fileID: 6704871091693613410}
   - component: {fileID: 4319060796889327684}
   - component: {fileID: 4319060796889327685}
   - component: {fileID: 4319060796889327680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -138,6 +139,7 @@ MonoBehaviour:
   - {fileID: 8508007212115822134}
   - {fileID: 5093473274297683750}
   - {fileID: 4562184089112464902}
+  - {fileID: 6704871091693613410}
 --- !u!114 &8508007212115822134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c82d685d5ecd0042b41f137d8f5ae66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
+  attackSpeed: 120
+  weaponName: 
 --- !u!114 &5093473274297683750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,9 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f385d724a83aaa4994fe3773bb6e7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
-  ammo: 0
-  reloadSpeed: 0
+  attackSpeed: 120
+  weaponName: 
+  ammo: 10
+  reloadSpeed: 2
 --- !u!114 &4562184089112464902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,10 +182,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87deed5b33a6f8043a1e60ed28f53022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
-  ammo: 0
-  reloadSpeed: 0
-  prefabProjectile: {fileID: 2903928686394467740, guid: 5f60c58ae3dc3984f9669346c6c30213, type: 3}
+  attackSpeed: 120
+  weaponName: 
+  ammo: 10
+  reloadSpeed: 2
+  projectile: {fileID: 1800104675585788973, guid: 01cc1744f8b48d84c970407e97d91a6f, type: 3}
+--- !u!114 &6704871091693613410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4319060796889327686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aba0a84cbd579f409faddf44cc2dc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 120
+  weaponName: 
+  ammo: 10
+  reloadSpeed: 2
 --- !u!50 &4319060796889327684
 Rigidbody2D:
   serializedVersion: 4
@@ -202,7 +223,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4319060796889327685
 BoxCollider2D:
   m_ObjectHideFlags: 0

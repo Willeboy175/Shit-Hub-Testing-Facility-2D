@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Weapons : MonoBehaviour
 {
-    public float attackSpeed; //Shots per minute
+    [Tooltip("Attacks per minute")]
+    public float attackSpeed; //Attacks per minute
     public string weaponName;
 
     float currentTime;
@@ -14,7 +15,7 @@ public class Weapons : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
-        mousePos = Camera.main.ScreenToViewportPoint(mousePos);
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         dir = (mousePos - transform.position).normalized;
 
