@@ -29,11 +29,7 @@ public class BulletMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            
-        }
-        else
+        if (collision.CompareTag("Player") != true)
         {
             Destroy(this.gameObject);
         }
