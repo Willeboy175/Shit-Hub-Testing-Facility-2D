@@ -16,6 +16,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         weapons = GetComponents<Weapons>();
 
         print(weapons.GetLowerBound(lowerBoundWeapons) + ", " + weapons.GetUpperBound(upperBoundWeapons));
+        print(currentWeapon + ", " + weapons[currentWeapon].weaponName);
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             {
                 currentWeapon = 0;
             }
-            print(currentWeapon);
+            print(currentWeapon + ", " + weapons[currentWeapon].weaponName);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -45,7 +46,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             {
                 currentWeapon = weapons.Length - 1;
             }
-            print(currentWeapon);
+            print(currentWeapon + ", " + weapons[currentWeapon].weaponName);
         }
     }
 }

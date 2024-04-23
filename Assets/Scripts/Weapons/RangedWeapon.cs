@@ -6,6 +6,7 @@ public class RangedWeapon : Weapons
 {
     public int ammo;
     public float reloadSpeed;
+    public GameObject reloadText;
 
     int currentAmmo;
     float reloadTimer;
@@ -17,9 +18,12 @@ public class RangedWeapon : Weapons
 
         if (currentAmmo <= 0 || Input.GetKeyDown(KeyCode.R))
         {
+            reloadText.SetActive(true);
             reloadTimer += Time.deltaTime;
+
             if (reloadTimer > reloadSpeed)
             {
+                reloadText.SetActive(false);
                 currentAmmo = ammo;
                 reloadTimer = 0;
             }
@@ -30,7 +34,7 @@ public class RangedWeapon : Weapons
     {
         if (currentAmmo <= 0 || base.Use() == false)
         {
-            print("No ammo");
+            //print("No ammo");
             return false;
         }
         currentAmmo--;

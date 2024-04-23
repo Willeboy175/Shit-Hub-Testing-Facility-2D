@@ -202,8 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6395605005862826771}
   - component: {fileID: 6650354180220012784}
-  - component: {fileID: 7223068126942364851}
-  - component: {fileID: 7813661588515230200}
+  - component: {fileID: 1703065077502513542}
   - component: {fileID: 8840229242042623804}
   - component: {fileID: 1770949883398472284}
   - component: {fileID: 5357791178209483265}
@@ -242,11 +241,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 7223068126942364851}
-  - {fileID: 7813661588515230200}
+  - {fileID: 1703065077502513542}
   - {fileID: 8840229242042623804}
   - {fileID: 1770949883398472284}
---- !u!114 &7223068126942364851
+--- !u!114 &1703065077502513542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,27 +253,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6980534648877055504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c82d685d5ecd0042b41f137d8f5ae66, type: 3}
+  m_Script: {fileID: 11500000, guid: 97af6b8227a021c4f8cce5fdcba61241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 120
-  weaponName: Weapon
---- !u!114 &7813661588515230200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6980534648877055504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f385d724a83aaa4994fe3773bb6e7b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSpeed: 120
-  weaponName: Ranged Weapon
-  ammo: 10
-  reloadSpeed: 2
+  weaponName: Melee Weapon
+  range: 1
+  mask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &8840229242042623804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +278,7 @@ MonoBehaviour:
   weaponName: Projectile Weapon
   ammo: 10
   reloadSpeed: 2
+  reloadText: {fileID: 0}
   projectile: {fileID: 1800104675585788973, guid: 01cc1744f8b48d84c970407e97d91a6f, type: 3}
 --- !u!114 &1770949883398472284
 MonoBehaviour:
@@ -309,11 +296,12 @@ MonoBehaviour:
   weaponName: Hitscan Weapon
   ammo: 10
   reloadSpeed: 2
+  reloadText: {fileID: 0}
   range: 5
+  laserduration: 1
   mask:
     serializedVersion: 2
     m_Bits: 136
-  laser: {fileID: 5836748461031616901, guid: 0b190c51ebbd0434f96e3535c33b8ec6, type: 3}
   lineRenderer: {fileID: 5357791178209483265}
 --- !u!120 &5357791178209483265
 LineRenderer:

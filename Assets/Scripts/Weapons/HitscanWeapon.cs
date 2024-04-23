@@ -5,13 +5,26 @@ using UnityEngine;
 public class HitscanWeapon : RangedWeapon
 {
     public float range = 5f;
+    public float laserduration = 1f;
     public LayerMask mask;
-    public GameObject laser;
     public LineRenderer lineRenderer;
 
+    protected float laserTimer;
     protected Vector3 startPos;
     protected Vector3 endPos;
-    protected GameObject newestLaser;
+
+    public override void Update()
+    {
+        base.Update();
+
+        laserTimer += Time.deltaTime;
+
+        if (laserTimer >= laserduration)
+        {
+            lineRenderer.SetPosition(0, startPos);
+            lineRenderer.SetPosition(1, startPos);
+        }
+    }
 
     public override bool Use()
     {
@@ -24,6 +37,7 @@ public class HitscanWeapon : RangedWeapon
 
         startPos = transform.position;
         endPos = transform.position + new Vector3(dir.x, dir.y, 0) * range;
+        laserTimer = 0;
 
         if (hit.collider)
         {
@@ -44,13 +58,6 @@ public class HitscanWeapon : RangedWeapon
             lineRenderer.SetPosition(0, startPos);
             lineRenderer.SetPosition(1, endPos);
         }
-
-        
-
-        //newestLaser = Instantiate(laser, transform.position, Quaternion.identity);
-        //newestLaser.transform.up = dir;
-        //newestLaser.transform.localPosition = hit.point / 2;
-        //newestLaser.transform.localScale = hit.point;
 
         return true;
     }
