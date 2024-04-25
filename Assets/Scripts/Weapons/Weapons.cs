@@ -7,6 +7,7 @@ public class Weapons : MonoBehaviour
     [Tooltip("Attacks per minute")]
     public float attackSpeed; //Attacks per minute
     public string weaponName;
+    public GameObject weapon;
 
     float currentTime;
     protected Vector2 dir;
@@ -18,6 +19,8 @@ public class Weapons : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         dir = (mousePos - transform.position).normalized;
+
+        MoveWeapon();
 
         currentTime += Time.deltaTime;
     }
@@ -31,5 +34,10 @@ public class Weapons : MonoBehaviour
         currentTime = 0;
         print("Bang");
         return true;
+    }
+
+    public virtual void MoveWeapon()
+    {
+        weapon.transform.up = dir;
     }
 }

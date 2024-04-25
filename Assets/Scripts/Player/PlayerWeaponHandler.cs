@@ -29,23 +29,30 @@ public class PlayerWeaponHandler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            weapons[currentWeapon].weapon.SetActive(false);
+
             currentWeapon++;
 
             if (currentWeapon >= weapons.Length)
             {
                 currentWeapon = 0;
             }
+
+            weapons[currentWeapon].weapon.SetActive(true);
             print(currentWeapon + ", " + weapons[currentWeapon].weaponName);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            weapons[currentWeapon].weapon.SetActive(false);
             currentWeapon--;
 
             if (currentWeapon <= -1)
             {
                 currentWeapon = weapons.Length - 1;
             }
+
+            weapons[currentWeapon].weapon.SetActive(true);
             print(currentWeapon + ", " + weapons[currentWeapon].weaponName);
         }
     }

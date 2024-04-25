@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MeleeWeapon : Weapons
 {
-    public float range = 1f;
+    public float range = 1.4f;
     public LayerMask mask;
 
     protected Vector3 startPos;
@@ -19,7 +19,16 @@ public class MeleeWeapon : Weapons
     // Update is called once per frame
     public override void Update()
     {
-        
+        base.Update();
+
+        if (Use() == true)
+        {
+
+        }
+        else
+        {
+            weapon.transform.up = dir;
+        }
     }
 
     public override bool Use()
@@ -34,6 +43,8 @@ public class MeleeWeapon : Weapons
         if (collider != null)
         {
             print("Hit");
+
+            Destroy(collider.gameObject);
         }
 
         return true;
